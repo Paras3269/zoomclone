@@ -552,7 +552,7 @@ let handleEndCall =  ()=>{
                             ref.srcObject = video.stream;
                         }
                     }}
-                    autoPlay  playsInline muted
+                    autoPlay  playsInline 
                     ></video>
                 </div>)
         })}</div>
