@@ -1,15 +1,28 @@
 import React from 'react'
 import "../App.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 export default function LandingPage() {
+
+const router = useNavigate();
+
   return (
     <div className='landingPageContainer'>
      <nav>
         <div className='navHeader'><h2>Apna Videocall</h2></div>
         <div className='navlist'>
-          <p>Join as Guest</p>
-          <p>Register</p>
-          <div role='button'>
+          <p onClick={()=>{
+            const meetCode = prompt("Enter Meeting Code:");
+            if(meetCode){
+
+              router(`${meetCode}`);
+            }
+          }}>Join as Guest</p>
+          <p onClick={()=>{
+            router('/auth')
+          }}>Register</p>
+          <div onClick={()=>{
+            router('/auth')
+          }} role='button'>
             <p>Login</p>
           </div>
         </div>
